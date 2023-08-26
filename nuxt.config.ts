@@ -1,20 +1,13 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
-  vue: {
-    config: {
-      isCustomElement: tag => tag.startsWith('v-')
-    }
-  },
   devtools: { enabled: true },
   modules: [
-    '@invictus.codes/nuxt-vuetify'
+    '@invictus.codes/nuxt-vuetify',
   ],
   vuetify: {
     /* vuetify options */
-    vuetifyOptions: {
-      // @TODO: list all vuetify options
-    },
+    // @TODO: list all vuetify options
   },
   buildModules: {
     /* nuxt-vuetify module options */
@@ -25,5 +18,23 @@ export default defineNuxtConfig({
     styles: true,
     autoImport: true,
     useVuetifyLabs: true,
-  }
+  },
+  build: {
+    // Add Vue 3 specific compiler options here
+    vue: {
+      compilerOptions: {
+        isCustomElement: (tag: string) => tag.startsWith('v-')
+      }
+    }
+  },
+  // For custom routes, consider using extendRoutes, but generally, it's not needed in Nuxt
+  // router: {
+  //   extendRoutes(routes, resolve) {
+  //     routes.push({
+  //       name: 'custom',
+  //       path: '/custom',
+  //       component: resolve(__dirname, 'pages/custom.vue'),
+  //     });
+  //   },
+  // },
 })
