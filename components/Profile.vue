@@ -1,10 +1,12 @@
 <template>
-  <v-list-item @click="$emit('navigate', 'profile')">
-    <v-list-item-icon>
-      <v-icon>mdi-account</v-icon>
-    </v-list-item-icon>
-    <v-list-item-content>Profil</v-list-item-content>
-  </v-list-item>
+  <v-list>
+    <v-list-item @click="$emit('navigate', 'profile')">
+      <template #default>
+        <v-icon>mdi-account</v-icon>
+        Profil
+      </template>
+    </v-list-item>
+  </v-list>
 </template>
 
 <script>
