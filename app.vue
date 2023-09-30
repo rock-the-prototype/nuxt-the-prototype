@@ -44,7 +44,7 @@ export default {
     navigateTo(route) {
       console.log(`Navigating to: ${route}`);
       // Implement your navigation logic here
-      this.$router.push(route); // Navigate to the specified route
+      this.$router.push('/' + route); // Navigate to the specified route
     },
   },
 };
