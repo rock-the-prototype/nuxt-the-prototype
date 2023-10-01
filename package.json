@@ -9,11 +9,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@invictus.codes/nuxt-vuetify": "^0.3.0",
+    "@invictus.codes/nuxt-vuetify": "latest",
     "@nuxt/devtools": "latest",
-    "@nuxt/typescript-build": "^3.0.1",
-    "@nuxt/typescript-runtime": "^3.0.1",
-    "@types/vue-router": "^2.0.0",
-    "nuxt": "^3.7.0"
+    "@nuxt/typescript-build": "latest",
+    "@nuxt/typescript-runtime": "latest",
+    "@types/vue-router": "latest",
+    "nuxt": "^3.7.4"
   }
 }
