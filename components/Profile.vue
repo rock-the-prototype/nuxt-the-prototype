@@ -1,12 +1,14 @@
 <template>
-  <v-list>
-    <v-list-item @click="$emit('navigate', 'profile')">
-      <template #default>
-        <v-icon>mdi-account</v-icon>
-        Profil
-      </template>
-    </v-list-item>
-  </v-list>
+  <div>
+    <v-container>
+      <v-row>
+        <v-col cols="12">
+          <h1>Profile Page</h1>
+          <p>This is the profile page.</p>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>

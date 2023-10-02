@@ -7,3 +7,10 @@ declare module 'vue/types/vue' {
         $router: VueRouter;
     }
 }
+
+// Add the following to handle .vue files:
+declare module "*.vue" {
+    import { DefineComponent } from "vue";
+    const component: DefineComponent<{}, {}, any>;
+    export default component;
+}

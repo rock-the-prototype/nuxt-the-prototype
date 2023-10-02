@@ -15,7 +15,7 @@
         <Login @navigate="navigateTo" />
       </v-app-bar>
       <v-main>
-        <MyComponent />
+        <!-- Remove MyComponent from here, let Nuxt handle it -->
       </v-main>
     </v-app>
   </div>

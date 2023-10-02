@@ -1,7 +1,12 @@
 {
-  "extends": "../.nuxt/tsconfig.server.json"
+  "extends": "../.nuxt/tsconfig.server.json",
   "compilerOptions": {
-    "types": ["@types/node", "@nuxt/typescript-build", "@nuxt/types", "vue-router"]
+    "types": ["@types/node", "@nuxt/typescript-build", "@nuxt/types", "vue-router"],
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"]
+    },
+    "baseUrl": "."
   },
   "typeRoots": ["./types"]
 }

@@ -1,27 +1,26 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div>
-    <h1>Profile Page</h1>
-    <!-- Your Login content here -->
-    Profilseite
-    Profilseite
-    Profilseite
-    Profilseite
-    Profilseite
-    Profilseite
-    Profilseite
-    Profilseite
-    Profilseite
-    Profilseite
-    Profilseite
-    Profilseite
+    <v-container>
+      <v-row>
+        <v-col cols="12">
+          <h1>{{ profileData.name }}</h1>
+          <p>{{ profileData.description }}</p>
+          <!-- Add other profile attributes here -->
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
-
 </template>
 
-<style scoped>
-
-</style>
+<script>
+export default {
+  data() {
+    return {
+      profileData: {
+        name: "Sample Name",
+        description: "Sample Description"
+      }
+    };
+  }
+}
+</script>
