@@ -1,12 +1,4 @@
 <template>
-  <v-list>
-    <VListItem @click="$emit('navigate', 'login')">
-      <template #default>
-        <v-icon>mdi-account</v-icon>
-        Login
-      </template>
-    </VListItem>
-  </v-list>
   <v-card>
     <v-card-title>Login</v-card-title>
     <v-card-text>

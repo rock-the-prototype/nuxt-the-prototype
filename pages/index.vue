@@ -9,6 +9,11 @@
 <script>
 import MyComponent from '@/components/MyComponent.vue';
 
+const routes = [
+      { path: '/login', name: 'login', component: () => import('@/pages/login.vue') },
+];
+
+
 export default {
   components: {
     MyComponent

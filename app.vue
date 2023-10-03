@@ -12,24 +12,23 @@
         <!-- Content and options for our App-Bar -->
         <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
         <v-app-bar-title>Title of the App</v-app-bar-title>
-        <Login @navigate="navigateTo" />
+        <v-spacer></v-spacer> <!-- Dies schiebt nachfolgende Elemente nach rechts -->
+        <LoginNav @navigate="navigateTo" />
       </v-app-bar>
       <v-main>
-        <!-- Remove MyComponent from here, let Nuxt handle it -->
+        <router-view />
       </v-main>
     </v-app>
   </div>
 </template>
 
 <script>
-import MyComponent from '@/components/MyComponent.vue'; // Ensure correct path
-import Login from '@/components/Login.vue';
+import LoginNav from '@/components/LoginNav.vue';
 import Profile from '@/components/Profile.vue';
 
 export default {
   components: {
-    MyComponent,
-    Login,
+    LoginNav,
     Profile,
   },
   data() {
