@@ -1,0 +1,9 @@
+$primary: #00ffff;   // Rock the Prototype Cyan / Aqua
+$secondary: #009999; // Persian Green
+$accent: #006b6b;    // Blue Stone
+$background-color: #242424;
+//  Further adjustments can be added here:
+v-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.11);
+}

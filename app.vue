@@ -13,6 +13,7 @@
         <v-app-bar-nav-icon @click="toggleDrawer"></v-app-bar-nav-icon>
         <v-app-bar-title>Title of the App</v-app-bar-title>
         <v-spacer></v-spacer> <!-- Dies schiebt nachfolgende Elemente nach rechts -->
+        <v-switch label="Dark mode" v-model="darkMode"></v-switch>
         <LoginNav @navigate="navigateTo" />
       </v-app-bar>
       <v-main>
@@ -25,6 +26,7 @@
 <script>
 import LoginNav from '@/components/LoginNav.vue';
 import Profile from '@/components/Profile.vue';
+import '~/assets/variables.scss';
 
 export default {
   components: {
@@ -45,7 +47,20 @@ export default {
       // Implement your navigation logic here
       this.$router.push('/' + route); // Navigate to the specified route
     },
+    toggleDarkMode() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    }
   },
+  computed: {
+    darkMode: {
+      get() {
+        return this.$vuetify.theme.dark;
+      },
+      set(value) {
+        this.$vuetify.theme.dark = value;
+      }
+    }
+  }
 };
 </script>
 

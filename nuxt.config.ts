@@ -5,11 +5,33 @@ export default defineNuxtConfig({
   modules: [
     '@invictus.codes/nuxt-vuetify',
   ],
+  css: ['~/assets/variables.scss'],
   vuetify: {
-    /* vuetify options */
-    // @TODO: list all vuetify options
-  },
-  buildModules: {
+    moduleOptions: {
+      // ... (andere Optionen)
+    },
+    vuetifyOptions: {
+      theme: {
+        dark: true,  // Dark mode per default
+        themes: {
+          light: {
+            primary: '#00ffff',   // Rock the Prototype Cyan / Aqua
+            secondary: '#009999', // Persian Green
+            accent: '#006b6b',    // Blue Stone
+            background: '#242424'
+          },
+          dark: {
+            primary: '#00ffff',
+            secondary: '#009999',
+            accent: '#006b6b',
+            background: '#242424'
+          }
+        }
+      }
+    }
+  }
+  ,
+    buildModules: {
     /* nuxt-vuetify module options */
     treeshaking: false,
     useIconCDN: true,
