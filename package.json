@@ -9,12 +9,16 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@invictus.codes/nuxt-vuetify": "latest",
     "@nuxt/devtools": "latest",
     "@nuxt/typescript-build": "latest",
     "@nuxt/typescript-runtime": "latest",
     "@types/vue-router": "latest",
-    "nuxt": "^3.7.4",
-    "sass": "^1.69.0"
+    "nuxt": "latest",
+    "sass": "latest",
+    "vite-plugin-vuetify": "^1.0.2"
+  },
+  "dependencies": {
+    "@mdi/font": "latest",
+    "vuetify": "latest"
   }
 }
