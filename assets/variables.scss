@@ -7,3 +7,24 @@ v-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 6px rgba(0,0,0,0.11);
 }
+//Transition für ein sanftes Überblenden zwischen Dark und Light Mode
+.v-application {
+  transition: background-color 0.3s ease !important;
+}
+
+.v-application .theme--light,
+.v-application .theme--dark {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.v-btn, .v-card, .v-navigation-drawer {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 5s;
+}
+//.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+//  opacity: 0;
+.fade-enter, .fade-leave-to {
+  transform: translateY(100px);
+}
