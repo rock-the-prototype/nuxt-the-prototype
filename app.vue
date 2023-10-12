@@ -29,9 +29,12 @@ import LoginNav from '@/components/LoginNav.vue';
 import Profile from '@/components/Profile.vue';
 import { ref } from 'vue';
 import { useTheme } from 'vuetify';
+import { useRouter } from 'vue-router';
 
 const theme = useTheme()
 const isDark = ref(theme.global.name.value === 'dark')
+const drawer = ref(false);
+const router = useRouter();
 
 const toggleDrawer = () => {
   drawer.value = !drawer.value;
@@ -40,12 +43,13 @@ const toggleDrawer = () => {
 const navigateTo = (route) => {
   console.log(`Navigating to: ${route}`);
   // Implement your navigation logic here
-  this.$router.push('/' + route);
+  router.push('/' + route);
 }
 
 watch(isDark, (newVal) => {
   theme.global.name.value = newVal ? 'dark' : 'light';
 })
+
 </script>
 
 <style scoped>
