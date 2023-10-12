@@ -1,30 +1,61 @@
+// Basierende Farbdefinitionen
 $primary: #00ffff;   // Rock the Prototype Cyan / Aqua
 $secondary: #009999; // Persian Green
 $accent: #006b6b;    // Blue Stone
-$background-color: #242424;
-//  Further adjustments can be added here:
-v-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.11);
-}
-//Transition für ein sanftes Überblenden zwischen Dark und Light Mode
-.v-application {
-  transition: background-color 0.3s ease !important;
+$background-dark: #242424;
+$text-color-dark: #EAEAEA;
+$success: #4CAF50;
+$error: #F44336;
+$warning: #FFC107;
+$info: #2196F3;
+$background-light: #FFFFFF;
+$text-color-light: #333333;
+
+// Dark Mode Styles
+.v-application.theme--dark {
+  background-color: $background-dark;
+  color: $text-color-dark;
 }
 
-.v-application .theme--light,
-.v-application .theme--dark {
-  transition: background-color 0.3s ease, color 0.3s ease;
+// Light Mode Styles
+.v-application.theme--light {
+  background-color: $background-light;
+  color: $text-color-light;
+}
+
+// Feedback Farben
+.success-text {
+  color: $success;
+}
+.error-text {
+  color: $error;
+}
+.warning-text {
+  color: $warning;
+}
+.info-text {
+  color: $info;
+}
+
+// Übergänge und Effekte
+.v-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.11);
 }
 
 .v-btn, .v-card, .v-navigation-drawer {
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
+
+.v-application {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity 5s;
 }
-//.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-//  opacity: 0;
+
+// Optional
 .fade-enter, .fade-leave-to {
-  transform: translateY(100px);
+transform: translateY(100px);
 }
