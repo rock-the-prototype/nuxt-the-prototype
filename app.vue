@@ -24,32 +24,48 @@
   </div>
 </template>
 
-<script setup>
-import LoginNav from '@/components/LoginNav.vue';
-import Profile from '@/components/Profile.vue';
-import { ref } from 'vue';
-import { useTheme } from 'vuetify';
-import { useRouter } from 'vue-router';
+<script>
+  import LoginNav from '@/components/LoginNav.vue';
+  import Profile from '@/components/Profile.vue';
+  import FontSizeAdjuster from '@/components/FontSizeAdjuster.vue';
+  import { ref, watch } from 'vue';
+  import { useTheme } from 'vuetify';
+  import { useRouter } from 'vue-router';
 
-const theme = useTheme()
-const isDark = ref(theme.global.name.value === 'dark')
-const drawer = ref(false);
-const router = useRouter();
+  export default {
+  components: {
+  LoginNav,
+  Profile,
+  FontSizeAdjuster
+},
+  setup() {
+  const theme = useTheme();
+  const isDark = ref(theme.global.name.value === 'dark');
+  const drawer = ref(false);
+  const router = useRouter();
 
-const toggleDrawer = () => {
+  const toggleDrawer = () => {
   drawer.value = !drawer.value;
 }
 
-const navigateTo = (route) => {
+  const navigateTo = (route) => {
   console.log(`Navigating to: ${route}`);
   // Implement your navigation logic here
   router.push('/' + route);
 }
 
-watch(isDark, (newVal) => {
+  watch(isDark, (newVal) => {
   theme.global.name.value = newVal ? 'dark' : 'light';
 })
 
+  return {
+  isDark,
+  drawer,
+  toggleDrawer,
+  navigateTo
+};
+}
+}
 </script>
 
 <style scoped>
